@@ -10,19 +10,16 @@ import org.springframework.test.context.jdbc.Sql;
 
 import java.util.List;
 
-@Sql(scripts = "classpath:data.sql")
+//@Sql(scripts = "classpath:resources/data.sql")
 @SpringBootTest
 class NestedEntitiesApplicationTests {
 
     @Autowired
     DrinkRepository drinkRepository;
 
-
     @Test
     void contextLoads() {
         List<Drink> all = drinkRepository.findAll();
         Assertions.assertThat(all).size().isEqualTo(1);
     }
-
-
 }
